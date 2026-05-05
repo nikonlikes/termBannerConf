@@ -29,10 +29,7 @@ if command -v chafa >/dev/null 2>&1; then
     echo "  chafa already installed: $(chafa --version | head -1)"
 else
     echo "  installing chafa via apt..."
-    # Tolerate unrelated repo issues (e.g., third-party PPA with expired keys)
-    # in apt update — the install step below is what matters.
-    sudo DEBIAN_FRONTEND=noninteractive NEEDRESTART_SUSPEND=1 apt-get update -qq \
-        || echo "  warning: apt-get update returned non-zero; continuing with cached lists"
+    sudo DEBIAN_FRONTEND=noninteractive NEEDRESTART_SUSPEND=1 apt-get update -qq
     sudo DEBIAN_FRONTEND=noninteractive NEEDRESTART_SUSPEND=1 apt-get install -y chafa
 fi
 
