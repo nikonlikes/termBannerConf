@@ -1,0 +1,21 @@
+# Don't commit any image files; this repo ships no images.
+*.jpg
+*.jpeg
+*.png
+*.webp
+*.gif
+*.svg
+*.bmp
+*.tiff
+
+# macOS detritus
+.DS_Store
+._*
+
+# Editor
+*.swp
+*~
+
+# Local config overrides (if anyone adds one)
+banner.env
+banner.env.local
